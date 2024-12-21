@@ -1,14 +1,17 @@
-# Acceleration Experience the global internet using Acceleration, the most Accelerated Proxy in the world The best looking proxy there is with Apps and tab cloaking and over 100+ games for students
+# Experience the web with Acceleration the fastest proxy for seamless browsing, privacy, and 100+ games and apps. Perfect for students and anyone seeking speed and security.
 
 
-<p align="center">
-  <img src="https://github.com/xdevnightless/Acceleration/raw/main/favicon.png" alt="Favicon" width="300" height="300">
-</p>
+
+
+![inpreview](https://raw.githubusercontent.com/xdevnightless/Acceleration/main/acceleration.png)
+
+
 
 > [!IMPORTANT]
 > If you fork this project, consider giving it a star in the original repository!
 
-**Join Our [Discord Community](https://discord.gg/Kvwzdt4WzJ) for support, more links, and an active community!**
+**Join Our [Discord Community](https://discord.gg/ZtqyuQBXt6
+) for support, more links, and an active community!**
 
 
 
@@ -28,13 +31,17 @@
 | `💬 Widgetbot Integration` | Connect, chat, and collaborate seamlessly right in the app. |
 | `🎶 Built-In Music Player` | Add a soundtrack to your experience and make browsing even cooler! |
 | `📂 Tab System` | Use our tabs to play games or whahtever you want  easily with the integrated tab system. |
-| `🔗 Testing Link` | Use our testing link to test the site so you know what to suggest for our site |
- https://shadowaccerltion.netlify.app/
-## Credits: A huge thanks goes out to all of the people who have contributed to Acceleration.
+ | `🎥 Movies Site` | 	Enjoy access to our exclusive movies site, featuring a library of popular films and shows to stream directly within the app. | 
+   | `💽 Plugins` | On the Setting  page, Where plugins is you can browse a library of scripts that you can apply to Acceleration. Proxy Injection scripts affect web browsing, whilst Modules affect Acceleration itself. If you wan't to create your own modules or scripts, use the script editor to create and modify anything you want in Acceleration.|
+## Credits: A thanks goes out to all of the people who have contributed to Acceleration.
 
-![Contrib](https://contrib.rocks/image?repo=Shadowproxynetwork/Shadownetwork) <a href="https://github.com/xdevnightless/Acceleration/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=xdevnightless/Acceleration" />
-</a>
+   <a href="https://github.com/xnightless/Shadownetwork/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=xnightless/Shadownetwork" alt="Shadow Network Contributors" />
+  </a>
+
+  <a href="https://github.com/xdevnightless/Acceleration/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=xdevnightless/Acceleration" alt="Acceleration Contributors" />
+  </a>
 
 ## Deployment
 <a href="https://railway.app/template/h7StcI?referralCode=u82tqg">
@@ -45,9 +52,7 @@
   <img src="https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/main/buttons/remade/render.svg" alt="Deploy on Render">
 </a>
 
-<a href="https://vercel.com/new/clone?repositoryurl=https://github.com/xdevnightless/Acceleration">
-  <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg" alt="Deploy with Vercel">
-</a>
+
 
 <a href="https://app.koyeb.com/deploy?type=git&repository=https://github.com/xdevnightless/Acceleration">
   <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg" alt="Deploy to Koyeb">
@@ -78,6 +83,11 @@
 
 
 ## Join our Discord!
-[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/Kvwzdt4WzJ)
+[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/xyRJwtBmMH)
+
+
+
+
+
 
 

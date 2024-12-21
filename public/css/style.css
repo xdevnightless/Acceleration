@@ -1,0 +1,187 @@
+:root {
+    --background-color: #333;
+    --text-color: #ffffff; 
+    --accent-color: #333; 
+    --accent-color-light: #414141; 
+    --font-family: 'Quicksand', sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-image: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-color: var(--background-color);
+    background-size: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    color: var(--text-color); /* Set text color to white */
+  }
+  
+  /* Settings Container */
+  .settings-container {
+    padding-top: 100px;
+    width: 100%; 
+    margin: 0;
+    display: flex;   
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em; /* Adjust the gap between items */
+    box-sizing: border-box;
+  }
+  
+  .panel {
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    padding: 20px;
+    color: #b7b7b7;
+    margin: 0.5%; /* Spacing between panels */
+    display: table; 
+    box-sizing: border-box;
+    width: 48%; /* Adjust panel width to fit two per row */
+    font-family: Arial;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a slight shadow */
+  }
+  
+  .panel label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .panel input,
+  .panel select,
+  .panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Spacing between form elements */
+    border-radius: 5px;
+  }
+  
+  .panel button {
+    background-color: var(--accent-color-light);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 20px; /* Reduce bottom margin for cleaner layout */
+  }
+  
+  .panel button:hover {
+    background-color: #666;
+  }
+  
+  input,
+  select {
+    background: var(--background-color); /* Consistent background */
+    color: var(--text-color);
+  }
+  
+  input:focus,
+  select:focus {
+    background-color: var(--accent-color-light); /* Highlight on focus */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .panel {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Navbar styles */
+ 
+  .shadow-navbar {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(145deg, #000000, #000000);
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-left: solid var(--primary-color) .5vh;
+    border-bottom: solid var(--primary-color) .5vh;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    position: relative;
+}
+
+.shadow-navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.shadow-navbar ul li a {
+    font-size: 16px;
+    color: white;
+}
+
+.shadow-navbar ul li a i {
+    font-size: 25px;
+    margin-bottom: 3px;
+    transition: all .1s
+}
+
+.shadow-navbar ul li a span {
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.shadow-navbar ul li a:hover i {
+    transform: scale(1.2);
+}
+
+.shadow-navbar ul li:hover::after {
+    width: 60%;
+}
+
+
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    z-index: 2;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+ul.navbar.searched {
+    top: -9vh;
+    transition: top .5s;
+}
+
+ul.navbar.searched:hover {
+    top: 0;
+}
+
+li.nav-item img {
+    size: 100%;
+    color: white;
+    display: block;
+    color: white;
+    transition: all 1s;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav-item {
+    float: right;
+    cursor: pointer !important;
+}
+
+li.nav-item a {
+    display: block;
+    transition: all .25s;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav-item a:hover {
+    background-color: #444;
+    border-radius: 15px;
+}

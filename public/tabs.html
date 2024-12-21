@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceleration Tabs</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <script src="/js/themes.js"></script>
+    <link rel="stylesheet" href="/css/tabs.css">
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+
+</head>
+
+<body>
+    <div class="chrome-container">
+        <div class="tab-bar">
+            <button class="add-tab" title="Add New Tab">+</button>
+        </div>
+        <div class="omnibox">
+            <div class="navigation-icons">
+                <button id="back-button" title="Back" onclick="tabs.backward()"><i
+                        class="fa-solid fa-arrow-left"></i></button>
+                <button id="forward-button" title="Forward" onclick="tabs.forward()"><i
+                        class="fa-solid fa-arrow-right"></i></button>
+                <button id="reload-button" title="Reload" onclick="tabs.reload()"><i
+                        class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <input type="text" id="url-input" placeholder="Enter URL (e.g., https://example.com)"
+                value="https://example.com" />
+            <button id="fullscreen-button" onclick="tabs.fullscreen()"><i class="fa-solid fa-expand"></i></button>
+        </div>
+        <div class="iframe-container">
+        </div>
+    </div>
+    <script src="/js/tabs.js" type="module"></script>
+</body>
+
+<script>
+    window.updateOmni = () => {
+        tabs.updateOmni();
+    }
+
+    window.updateCurrentTab = (title) => {
+        tabs.updateTabTitle(title);
+    }
+</script>
+
+</html>

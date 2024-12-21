@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link href="/css/index.css" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Experience the web with Acceleration the fastest proxy for seamless browsing, privacy, and 100+ games and apps. Perfect for students and anyone seeking speed and security.
+
+" />
+
+    <title>Home |  Acceleration </title>
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <script src="/js/themes.js"></script>
+    <script src="/js/settings.js"></script>
+      
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #frame {
+            border: 0px solid black;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            height: 100%;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        li.icon img {
+            size: 100%;
+            color: white;
+            display: block;
+            color: white;
+            transition: all 1s;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li.icon {
+            float: left;
+            cursor: pointer !important;
+        }
+
+        li.icon:hover {
+            background-color: #444;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="/baremux/index.js"></script>
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/js/register-sw.js" defer></script>
+    <script>
+        async function setupBaremux() {
+            const conn = new BareMux.BareMuxConnection("/baremux/worker.js");
+            await conn.setTransport("/epoxy/index.mjs", [{ wisp: "wss://wisp.mercurywork.shop" }]);
+        }
+
+        setupBaremux()
+
+        function checkPopups() {
+            var newWin = window.open("", "", "width=100, height=100");
+            if (newWin) {
+                newWin.close();
+                return true;
+            } else {
+                alert("Please allow popups and redirects.");
+                return false;
+            }
+        }
+
+        window.addEventListener('load', function () {
+            var currentUrl = window.location.href;
+            var bgUrl = localStorage.getItem('backgroundImage');
+            if (currentUrl !== "about:blank" && !sessionStorage.getItem('tabOpened')) {
+                if (checkPopups()) {
+                    sessionStorage.setItem('tabOpened', 'true');
+                    var win = window.open('about:blank', '_blank');
+                    win.document.write("<html style='height:100%; margin:0; padding:0;'><body style='height:100%; margin:0; padding:0;'><iframe src='" + currentUrl + "' style='width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe></body></html>");
+                    win.onbeforeunload = function () {
+                        sessionStorage.removeItem('tabOpened');
+                    };
+                    window.close();
+                } else if (!sessionStorage.getItem('alertShown')) {
+                    sessionStorage.setItem('alertShown', 'true');
+                }
+            }
+        });
+    </script>
+
+   <ul class="navbar">
+
+        <li class="nav-item">
+            <nav class="shadow-navbar">
+                <ul>
+                    <li><a onclick="page('/home.html')"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                    <li><a onclick="page('/games.html')"><i class="fa-solid fa-gamepad"></i> <span>Games</span></a></li>
+                    <li><a onclick="page('/apps.html')"><i class="fas fa-mobile-alt"></i> <span>Apps</span></a></li>
+                    <li><a onclick="page('/tabs.html', true)"><i class="fa-solid fa-plus"></i> <span>Tabs</span></a></li>
+                    <li><a onclick="page('/about.html')"><i class="fa-solid fa-user"></i> <span>About Us</span></a></li>
+                    <li><a onclick="page('/settings.html')"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                </ul>
+            </nav>
+
+    </ul>
+
+    <link href="/css/index.css" rel="stylesheet">
+    <iframe id="frame" src="/home.html"></iframe>
+    <script>
+        if(localStorage.getItem("closeProt")) window.onbeforeunload = function (e) { e.preventDefault(); return true };
+        const cloak = JSON.parse(localStorage.getItem("cloak")) ?? {title: "Acceleration", icon: ""};
+        document.onload = loadCloak(cloak);
+        window.hideNav = () => {
+            document.querySelector('.navbar').classList.add('searched');
+        }
+        window.showNav = () => {
+            document.querySelector('.navbar').classList.remove('searched');
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('page')) page(params.get('page'));
+        function page(link, hideNavbar) {
+            if(hideNavbar || link == "/tabs.html") hideNav();
+            else showNav();
+            document.getElementById('frame').src = link;
+            const url = new URL(window.location.href);
+            url.searchParams.set('page', link);
+            history.pushState({}, '', url.toString());
+        }
+    </script>
+</body>
+
+</html>

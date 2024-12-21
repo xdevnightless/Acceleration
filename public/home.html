@@ -1,0 +1,280 @@
+<title>Home |Acceleration </title>
+<script src="/uv/uv.bundle.js" defer></script>
+<script src="/uv/uv.config.js" defer></script>
+<script src="/js/register-sw.js" defer></script>
+<script src="/js/search.js" defer></script>
+<link href="/css/index.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/themes.css" />
+<script src="/js/themes.js"></script>
+<form class="searchform" id="searchform">
+    <form class="searchform" id="searchform" method="get" action="https://www.google.com/search">
+        <input class="search-bar" id="searchbar" placeholder="Search Google or Type a Address" type="text" size="31"
+            value="">
+     
+        <script>
+            document.getElementById("searchform").addEventListener("submit", async function (event) {
+                event.preventDefault();
+                const input = document.querySelector('#searchbar').value;
+                if (parent.tabs) parent.tabs.load(input);
+                else {
+                    registerSW();
+                    parent.setupBaremux();
+                    location.href = __uv$config.prefix + __uv$config.encodeUrl(search(input, (localStorage.getItem("searchEngine") || "https://google.com/search?q=%s")));
+                }
+                top.hideNav();
+            });
+        </script>
+        <div class="logo-wrapper">
+            <h1 data-text="&nbsp;Acceleration" class="text">&nbsp;Acceleration</h1>
+        </div>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+
+
+
+            #title {
+                width: 100%;
+                position: absolute;
+                bottom: 60%;
+                left: 0px;
+                text-align: center;
+                color: var(--primary-color);
+                text-shadow: 3px 6px 2px var(--secondary-color);
+            }
+
+            #searchbar {
+                height: 50px;
+                width: 70%;
+                position: absolute;
+                bottom: 45%;
+                left: 15%;
+                padding: 3px;
+                border-radius: 15px;
+                background: transparent;
+                border: 2px solid black;
+                text-align: center;
+                color: var(--primary-color);
+                border: 3px solid var(--primary-color);
+                transition: all 1s;
+                filter: drop-shadow(0 0 20px #151414) drop-shadow(0 0 50px #151414);
+            }
+
+            #searchbar:hover {
+                transform: translateY(-5%);
+                background-color: #151414;
+            }
+
+            #searchbar::placeholder {
+                color: var(--primary-color);
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: var(--primary-color);
+                overflow: hidden;
+            }
+
+            #title {
+                width: 100%;
+                position: absolute;
+                bottom: 60%;
+                left: 0;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: bold;
+                color: var(--primary-color);
+                text-shadow: 3px 6px 10px var(--secondary-color), 0 0 20px var(--highlight-color);
+                letter-spacing: 2px;
+                animation: glow 2s infinite alternate;
+            }
+
+            @keyframes glow {
+                0% {
+                    text-shadow: 3px 6px 10px var(--highlight-color), 0 0 20px var(--primary-color);
+                }
+
+                100% {
+                    text-shadow: 3px 6px 10px var(--highlight-color), 0 0 40px var(--highlight-color);
+                }
+            }
+
+            #searchbar {
+                height: 50px;
+                width: 70%;
+                position: absolute;
+                bottom: 45%;
+                left: 15%;
+                padding: 10px;
+                border-radius: 30px;
+                background: rgba(0, 0, 0, 0.6);
+                border: 3px solid var(--primary-color);
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: var(--primary-color);
+                text-align: center;
+                font-size: 1.2rem;
+                transition: all 0.5s ease;
+                filter: drop-shadow(0 0 20px var(--primary-color));
+            }
+
+            #searchbar:hover {
+                transform: translateY(-5%) scale(1.05);
+                background-color: rgba(21, 20, 20, 0.9);
+                box-shadow: 0 0 50px var(--highlight-color);
+            }
+
+            #searchbar::placeholder {
+                a {
+                    color: var(--secondary-color);
+                }
+            }
+
+            .particles {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+                right: 0;
+                bottom: 0;
+                z-index: 9999;
+                pointer-events: none;
+            }
+
+            .particle {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                animation: snowflakes-fall 15s linear infinite, snowflakes-shake 5s ease-in-out infinite;
+                opacity: 0.8;
+                flex: 1;
+                position: relative;
+                top: -10%;
+                animation: snowflakes-fall 15s linear, snowflakes-shake 5s ease-in-out;
+                animation-delay: var(--d);
+                animation-iteration-count: infinite;
+                width: 10%;
+                height: 10%;
+                color: white;
+            }
+
+            @keyframes snowflakes-fall {
+                100% {
+                    transform: translateY(100vh);
+                    top: 100%;
+                }
+            }
+
+            @keyframes snowflakes-shake {
+                50% {
+                    transform: translateX(50px) rotate(15deg);
+                    transform: translateX(100px) rotate(5deg);
+                }
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: var(--primary-color);
+            }
+
+            a {
+                color: var(--highlight-color);
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+                color: var(--primary-color);
+            }
+        </style>
+         <script>
+            const canvas = document.getElementById("spaceCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particlesArray = [];
+        const numberOfParticles = 100;
+        const mouse = {
+            x: null,
+            y: null,
+        };
+        window.addEventListener("mousemove", (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        class Particle {
+            constructor(x, y, size, color) {
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.color = color;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowColor = "#ffffff";
+                ctx.shadowBlur = 20;
+                ctx.fill();
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 150) {
+                    this.x -= dx / 15;
+                    this.y -= dy / 15;
+                }
+            }
+        }
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const color = "rgba(255, 255, 255, 0.8)";
+                particlesArray.push(new Particle(x, y, size, color));
+            }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach((particle) => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        init();
+        animate();
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+  </script>
+       
+            try { parent.updateCurrentTab("Acceleration Home"); } catch (_) { };
+        </script>
+
+        </html>

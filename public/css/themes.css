@@ -1,0 +1,269 @@
+/* Default Theme (Dark Gray/Black with Red Accents) */
+:root {
+    --primary-color: #fff;
+    /* White text */
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    /* Slightly transparent white text */
+    --highlight-color: red;
+    /* Tomato red highlight */
+    --background-color: #181818;
+    --border-color: #2c2f38;
+    /* Dark borders */
+    --icon-color: #ccc;
+    /* Light gray icon color */
+}
+
+/* Midnight Theme */
+:root.midnight {
+    --primary-color: #ecf0f1;
+    /* Light text */
+    --secondary-color: rgba(236, 240, 241, 0.7);
+    /* Slightly transparent text */
+    --background-color: #2c3e50;
+    /* Dark blue background */
+    --highlight-color: #588fc7;
+    /* Cool blue highlight */
+    --border-color: black;
+    /* Black borders */
+    --icon-color: #ccc;
+    /* Light gray icons */
+}
+
+/* Dark Cool Theme */
+:root.dark-cool {
+    --primary-color: #fff;
+    /* White text */
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    /* Slightly transparent white text */
+    --background-color: #121212;
+    /* Dark background */
+    --highlight-color: #1e90ff;
+    /* Cool blue highlight */
+    --border-color: #444;
+    /* Dark borders */
+    --icon-color: #bbb;
+    /* Light gray icon color */
+}
+
+/* Monochrome Theme */
+:root.monochrome {
+    --primary-color: #fff;
+    /* White text */
+    --secondary-color: rgba(255, 255, 255, 0.5);
+    /* Transparent white text */
+    --background-color: #000;
+    /* Black background */
+    --highlight-color: #808080;
+    /* Neutral grey highlights */
+    --border-color: #333;
+    /* Dark grey borders */
+    --icon-color: #bbb;
+    /* Light gray icon color */
+}
+
+/* Night Neon Theme */
+:root.night-neon {
+    --primary-color: #fff;
+    /* White text */
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    /* Slightly transparent white text */
+    --background-color: #0c0c0c;
+    /* Very dark background */
+    --highlight-color: #39ff14;
+    /* Neon green accents */
+    --border-color: #222;
+    /* Very dark borders */
+    --icon-color: #39ff14;
+    /* Neon green icon color */
+}
+
+/* Pastel Dark Theme */
+:root.pastel-dark {
+    --primary-color: #fff;
+    /* White text */
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    /* Slightly transparent white text */
+    --background-color: #2b2d42;
+    /* Soft dark blue background */
+    --highlight-color: #f5a623;
+    /* Soft yellow-orange highlights */
+    --border-color: #3e3e3e;
+    /* Dark grey borders */
+    --icon-color: #f5a623;
+    /* Soft yellow-orange icon color */
+}
+
+:root.hacker {
+    --primary-color: #00ff00;
+    /* Neon green text */
+    --secondary-color: rgba(0, 255, 0, 0.7);
+    /* Slightly transparent green */
+    --highlight-color: #00ff00;
+    /* Neon green highlights */
+    --background-color: #1c1c1c;
+    /* Dark background */
+    --border-color: #333;
+    /* Dark borders */
+    --icon-color: #ccc;
+    /* Light gray icon color */
+}
+
+
+:root.oceanic {
+    --primary-color: #00aaff;
+    --secondary-color: rgba(0, 170, 255, 0.7);
+    --highlight-color: #0077cc;
+    --background-color: #002233;
+    --border-color: #004455;
+    --icon-color: #88ccff;
+}
+:root.galaxy {
+    --primary-color: #8a2be2;
+    --secondary-color: rgba(138, 43, 226, 0.7);
+    --highlight-color: #6a0dad;
+    --background-color: #1c0033;
+    --border-color: #330066;
+    --icon-color: #c3a6ff;
+}
+:root.gaming {
+    --primary-color: #ff4500;
+    --secondary-color: rgba(255, 69, 0, 0.7);
+    --highlight-color: #e03a00;
+    --background-color: #1a1a1a;
+    --border-color: #333333;
+    --icon-color: #ff9e80;
+}
+:root.cyberpunk {
+    --primary-color: #ff00ff;
+    --secondary-color: rgba(255, 0, 255, 0.7);
+    --highlight-color: #d400d4;
+    --background-color: #1a001a;
+    --border-color: #330033;
+    --icon-color: #ff80ff;
+}
+:root.techno {
+    --primary-color: #00ffff;
+    --secondary-color: rgba(0, 255, 255, 0.7);
+    --highlight-color: #00cccc;
+    --background-color: #001f1f;
+    --border-color: #003333;
+    --icon-color: #80ffff;
+}
+
+:root.crimson {
+    --primary-color: #dc143c;
+    --secondary-color: rgba(220, 20, 60, 0.7);
+    --highlight-color: #b01030;
+    --background-color: #330000;
+    --border-color: #660000;
+    --icon-color: #ff8a8a;
+}
+:root.halloween {
+    --primary-color: #ff7518;
+    --secondary-color: rgba(255, 117, 24, 0.7);
+    --highlight-color: #cc5f14;
+    --background-color: #1a1a1a;
+    --border-color: #333333;
+    --icon-color: #ffe3b3;
+}
+:root.sunset {
+    --primary-color: #ff4500;
+    --secondary-color: rgba(255, 69, 0, 0.7);
+    --highlight-color: #e03a00;
+    --background-color: #330000;
+    --border-color: #660000;
+    --icon-color: #ffa07a;
+}
+:root.ruby {
+    --primary-color: #e0115f;
+    --secondary-color: rgba(224, 17, 95, 0.7);
+    --highlight-color: #b00d4b;
+    --background-color: #3b001b;
+    --border-color: #66002d;
+    --icon-color: #f78ba7;
+}
+:root.noctura {
+    --primary-color: #1a1aff;
+    --secondary-color: rgba(26, 26, 255, 0.7);
+    --highlight-color: #0000e6;
+    --background-color: #0d0d1a;
+    --border-color: #1a1a4d;
+    --icon-color: #6666ff;
+}
+:root.sapphire {
+    --primary-color: #0f52ba;
+    --secondary-color: rgba(15, 82, 186, 0.7);
+    --highlight-color: #0d47a1;
+    --background-color: #001a33;
+    --border-color: #003366;
+    --icon-color: #80bfff;
+}
+:root.light {
+    --primary-color: #ffffff;
+    --secondary-color: rgba(255, 255, 255, 0.7);
+    --highlight-color: #f2f2f2;
+    --background-color: #e6e6e6;
+    --border-color: #cccccc;
+    --icon-color: #999999;
+}
+:root.christmas {
+    --primary-color: #ff0000;
+    --secondary-color: rgba(255, 0, 0, 0.7);
+    --highlight-color: #cc0000;
+    --background-color: #006400;
+    --border-color: #003300;
+    --icon-color: #ffcccb;
+}
+:root.fire {
+    --primary-color: #ff4500;
+    --secondary-color: rgba(255, 69, 0, 0.7);
+    --highlight-color: #e03a00;
+    --background-color: #330000;
+    --border-color: #660000;
+    --icon-color: #ffa07a;
+}
+
+:root.lunar {
+    --primary-color: #cfd8dc; 
+    --secondary-color: rgba(207, 216, 220, 0.7);
+    --highlight-color: #90a4ae;
+    --background-color: #102027;
+    --border-color: #37474f;
+    --icon-color: #b0bec5;
+}
+
+:root.aurora {
+    --primary-color: #a7ffeb; 
+    --secondary-color: rgba(167, 255, 235, 0.7);
+    --highlight-color: #64ffda;
+    --background-color: #00332e;
+    --border-color: #00695c;
+    --icon-color: #82e9de;
+}
+
+:root.eclipse {
+    --primary-color: #ffcc00; 
+    --secondary-color: rgba(255, 204, 0, 0.7);
+    --highlight-color: #ffb300;
+    --background-color: #0d0d0d;
+    --border-color: #333300;
+    --icon-color: #ffd740;
+}
+
+:root.storm {
+    --primary-color: #bdbdbd; 
+    --secondary-color: rgba(189, 189, 189, 0.7);
+    --highlight-color: #757575;
+    --background-color: #212121;
+    --border-color: #424242;
+    --icon-color: #e0e0e0;
+}
+
+:root.spring {
+    --primary-color: #4caf50; 
+    --secondary-color: rgba(76, 175, 80, 0.7);
+    --highlight-color: #388e3c;
+    --background-color: #e8f5e9;
+    --border-color: #c8e6c9;
+    --icon-color: #a5d6a7;
+}

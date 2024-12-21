@@ -1,0 +1,69 @@
+
+
+/* Text Styling */
+.text {
+  position: relative;
+  top: -20vh;
+  font-size: 20vh;
+  color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0px 0px 5px 5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover Effect for Text */
+.text:hover {
+  position: relative;
+  font-size: 20vh;
+  color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0px 0px 5px 5px;
+}
+
+/* Media Query for Portrait Orientation */
+@media (orientation: portrait) {
+  .text {
+      position: relative;
+      top: -10vw;
+      font-size: 10vw;
+      color: var(--primary-color);
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 0px 0px 5px 5px;
+  }
+}
+
+/* Text Animation */
+.text::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--primary-color);
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid var(--primary-color);
+  animation: animate 5s linear infinite;
+  filter: drop-shadow(0 0 20px var(--highlight-color)) drop-shadow(0 0 50px var(--highlight-color));
+}
+
+/* Keyframes for Animation */
+@keyframes animate {
+  0%, 10%, 100% {
+      width: 0;
+  }
+
+  70%, 90% {
+      width: 100%;
+  }
+}

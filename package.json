@@ -1,0 +1,31 @@
+{
+  "name": "acceleration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xdevnightless/Acceleration.git"
+  },
+  "author": "Nightless, contributations by Peak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xdevnightless/Acceleration/issues"
+  },
+  "homepage": "https://github.com/xdevnightless/Acceleration#readme",
+  "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.0.9",
+    "@mercuryworkshop/epoxy-tls": "^2.1.11-1",
+    "@mercuryworkshop/epoxy-transport": "^2.1.11",
+    "@mercuryworkshop/libcurl-transport": "^1.3.10",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.8",
+    "compression": "^1.7.4",
+    "express": "^5.0.0",
+    "wisp-server-node": "^1.0.4",
+    "ws": "^8.16.0"
+  }
+}

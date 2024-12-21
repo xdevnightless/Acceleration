@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/js/settings.js" defer></script>
+    <script src="/js/themes.js"></script>
+    <title>Settings Panel</title>
+     <ul class="navbar">
+
+     
+</head>
+
+<body>
+    <div class="settings-container">
+        <div class="panel" id="particles-settings">
+            <label for="particles-input">Tab Cloaking</label>
+            <input type="text" id="name-input" placeholder="Tab Name">
+            <input type="text" id="icon-input" placeholder="Tab Icon">
+            <button type="button" onclick="setCloak(document.getElementById('name-input').value, document.getElementById('icon-input').value)">Save</button>
+        </div>
+
+        <div class="panel" id="themes-settings">
+            <label>Choose Theme</label>
+            <select id="theme-select">
+<option value="default">Default</option>
+<option value="midnight">Midnight</option>
+<option value="dark-cool">Dark Cool</option>
+<option value="monochrome">Monochrome</option>
+<option value="night-neon">Night Neon</option>
+<option value="pastel-dark">Pastel Dark</option>
+<option value="hacker">Hacker</option>
+<option value="oceanic">Oceanic</option>
+<option value="galaxy">Galaxy</option>
+<option value="gaming">Gaming</option>
+<option value="cyberpunk">Cyberpunk</option>
+<option value="techno">Techno</option>
+<option value="crimson">Crimson</option>
+<option value="halloween">Halloween</option>
+<option value="sunset">Sunset</option>
+<option value="ruby">Ruby</option>
+<option value="noctura">Noctura</option>
+<option value="sapphire">Sapphire</option>
+<option value="light">Light</option>
+<option value="christmas">Christmas</option>
+<option value="fire">Fire</option>
+<option value="lunar">Lunar</option>
+<option value="aurora">Aurora</option>
+<option value="eclipse">Eclipse</option>
+<option value="storm">Storm</option>
+<option value="spring">Spring</option>
+
+            </select>
+            <button type="button" id="save-theme-button" onclick="saveTheme()">Save Theme</button>
+        </div>
+
+        <div class="panel" id="close-settings">
+            <label for="image-url">Anti-Close</label>
+            <p class="description" id="antiCloseStatus">Current status:&NonBreakingSpace;</p> 
+            <button type="button" onclick="localStorage.setItem('closeProt', 'enabled'); top.onbeforeunload = function (e) { e.preventDefault(); return true; }; document.getElementById('antiCloseStatus').textContent = 'Current status: enabled'">Enable Anti-Close</button>
+            <button type="button" onclick="localStorage.setItem('closeProt', 'disabled'); top.onbeforeunload = null; document.getElementById('antiCloseStatus').textContent = 'Current status: disabled'">Disable Anti-Close</button>
+        </div>
+
+        <div class="panel" id="image-settings">
+            <label for="image-url">Enter image URL</label>  
+            <input type="text" id="image-url">
+            <button type="button">Save Image URL</button>
+        </div>
+
+        <div class="panel" id="background-settings">
+            <label>Upload Background</label>
+            <p class="description">Provide the URL of the image you want to use as a background.</p>
+            <button type="button" id="background-upload-button"
+                onclick="document.getElementById('background-upload').click();">
+                Choose a file
+            </button>
+            <input type="file" id="background-upload" accept="image/*" onchange="updateButtonText()"
+                style="display: none;">
+        </div>
+
+        <div class="panel" id="panic-settings">
+            <label>Panic Key</label>
+            <p class="description">Press any key combination:</p>
+            <input type="text" id="panicKeybind" readonly>
+            <button type="button" onclick="localStorage.setItem('panicKey', document.getElementById('panicKeybind').value)">
+                Save
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("name-input").value = JSON.parse(localStorage.getItem("cloak"))["title"] ?? "Acceleration";
+        document.getElementById("icon-input").value = JSON.parse(localStorage.getItem("cloak"))["icon"] ?? "/favicon.ico";
+        document.getElementById("panicKeybind").value = localStorage.getItem("panicKey") ?? "Shift+~";
+        document.getElementById("antiCloseStatus").innerText += localStorage.getItem("closeProt") ?? "disabled";
+        document.getElementById("theme-select").value = localStorage.getItem("theme") ?? "default";
+
+        const panicKeybindInput = document.getElementById("panicKeybind");
+
+        panicKeybindInput.addEventListener("focus", () => {
+            document.addEventListener("keydown", handlepanicKeybindInput);
+        });
+
+        panicKeybindInput.addEventListener("blur", () => {
+            document.removeEventListener("keydown", handlepanicKeybindInput);
+        });
+
+        function handlepanicKeybindInput(event) {
+            event.preventDefault(); // Prevent default actions for special keys
+            const key = event.key;
+            const modifiers = [];
+
+            if (event.ctrlKey) modifiers.push("Ctrl");
+            if (event.shiftKey) modifiers.push("Shift");
+            if (event.altKey) modifiers.push("Alt");
+            if (event.metaKey) modifiers.push("Meta");
+
+            const panicKeybind = [...modifiers, key].join("+");
+            panicKeybindInput.value = panicKeybind;
+        }
+
+        function saveTheme(theme = document.getElementById('theme-select').value) {
+            localStorage.setItem("theme", theme);
+            loadTheme(theme);
+        }
+    </script>
+
+</body>
+
+</html>

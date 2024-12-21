@@ -1,0 +1,185 @@
+body {
+
+    font-family: Arial;
+
+    color: white;
+
+    background-color: #121212;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+
+    margin: 0;
+
+}
+
+.player-container {
+
+    background-color: #282828;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+.artwork img {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 10px;
+
+}
+
+.info {
+
+    flex: 1;
+
+}
+
+.song-name {
+
+    font-size: 20px;
+
+    margin: 0;
+
+}
+
+.song-artist {
+
+    margin: 0;
+
+    margin-top: 8px;
+
+    font-size: 15px;
+
+    color: grey;
+
+}
+
+.progress-container {
+
+    margin-top: 15px;
+
+    flex: 1;
+
+}
+
+.progress-bar {
+
+    height: 15px;
+
+    border-radius: 100px;
+
+    outline: 1px solid white;
+
+    width: 100%;
+
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: #333;
+    border-radius: 100px;
+}
+
+.timestamp {
+
+    margin-top: 8px;
+
+    position: relative;
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+.controls {
+
+    background: #353535;
+
+    padding: 15px 50px;
+
+    border-radius: 8px;
+
+    display: inline-block;
+
+
+}
+
+.controls button {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+}
+
+.volume-control {
+
+    display: inline-flex;
+
+    gap: 10px;
+
+}
+
+.volume-control input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #535353;
+    border-radius: 1px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Add transition for smooth movement */
+}
+
+.speaker-icon {
+
+    flex: 2;
+
+    width: 20px;
+
+    height: 20px;
+
+}
+
+.progress-bar:active .progress {
+    width: 20%;
+    /* This will keep the width constant on click */
+}

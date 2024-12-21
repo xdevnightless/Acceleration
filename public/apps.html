@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/apps.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/js/register-sw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/js/settings.js"></script>
+    <link rel="stylesheet" href="/css/themes.css" />
+    <script src="/js/themes.js"></script>
+
+    
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin-top: 15vh;
+        }
+
+        .app-card {
+            background: #484848;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top: 4px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px;
+            width: 105px;
+        }
+    </style>
+    <title>Acceleration Apps</title>
+</head>
+
+<body>
+    <div class="search-bar" style="display: flex; justify-content: center;">
+        <form id="searchForm" onsubmit="return false;">
+            <input id="searchApps" placeholder="Search Apps" class="searchbar">
+        </form>
+    </div>
+    <div class="app-links"></div>
+</body>
+<script src="/js/apps.js"></script>
