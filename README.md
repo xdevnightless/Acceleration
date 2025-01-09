@@ -1,15 +1,12 @@
 # Acceleration Experience the global internet using Acceleration, the most Accelerated Proxy in the world The best looking proxy there is with Apps and tab cloaking and over 100+ games for students
 
 
-<p align="center">
-  <img src="https://github.com/xdevnightless/Acceleration/raw/main/favicon.png" alt="Favicon" width="300" height="300">
-</p>
+
 
 > [!IMPORTANT]
 > If you fork this project, consider giving it a star in the original repository!
 
-**Join Our [Discord Community](https://discord.gg/ZtqyuQBXt6
-) for support, more links, and an active community!**
+**Join Our [Discord Community](https://discord.gg/Kvwzdt4WzJ) for support, more links, and an active community!**
 
 
 
@@ -79,7 +76,6 @@
 
 
 ## Join our Discord!
-[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/ZtqyuQBXt6
-)
+[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/xyRJwtBmMH)
 
 

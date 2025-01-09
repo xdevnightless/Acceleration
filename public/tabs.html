@@ -5,26 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceleration Tabs</title>
-    <link rel="stylesheet" href="/CSS/tabs.css">
+        <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <script src="/js/themes.js"></script>
+    <link rel="stylesheet" href="/css/tabs.css">
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+
 </head>
-        <ul class="navbar">
-
-        <li class="nav-item">
-            <nav class="shadow-navbar">
-                <ul>
-                    <li><a href="home.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
-                    <li><a href="games.html"><i class="fa-solid fa-gamepad"></i> <span>Games</span></a></li>
-                    <li><a href="apps.html"><i class="fas fa-mobile-alt"></i> <span>Apps</span></a></li>
-                    <li><a href="tabs.html"><i class="fa-solid fa-plus"></i> <span>Tabs</span></a></li>
-                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                                                            <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Tabs</span></a></li>
-
-                </ul>
-            </nav>
-
 
 <body>
     <div class="chrome-container">
@@ -43,6 +33,7 @@
             <input type="text" id="url-input" placeholder="Enter URL (e.g., https://example.com)"
                 value="https://example.com" />
             <button id="fullscreen-button" onclick="tabs.fullscreen()"><i class="fa-solid fa-expand"></i></button>
+            <button id="extensions-button" title="Extensions" onclick="tabs.createTab('acceleration://plugins')"><i class="fa-solid fa-puzzle-piece"></i></button>
         </div>
         <div class="iframe-container">
         </div>

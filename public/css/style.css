@@ -1,0 +1,167 @@
+:root {
+    --background-color: #333;
+    --text-color: #ffffff; 
+    --accent-color: #333; 
+    --accent-color-light: #414141; 
+    --font-family: 'Quicksand', sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-image: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-color: var(--background-color);
+    background-size: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    color: var(--text-color); /* Set text color to white */
+  }
+  
+  /* Settings Container */
+  .settings-container {
+    padding-top: 100px;
+    width: 100%; 
+    margin: 0;
+    display: flex;   
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em; /* Adjust the gap between items */
+    box-sizing: border-box;
+  }
+  
+  .panel {
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    padding: 20px;
+    color: #b7b7b7;
+    margin: 0.5%; /* Spacing between panels */
+    display: table; 
+    box-sizing: border-box;
+    width: 48%; /* Adjust panel width to fit two per row */
+    font-family: Arial;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a slight shadow */
+  }
+  
+  .panel label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .panel input,
+  .panel select,
+  .panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Spacing between form elements */
+    border-radius: 5px;
+  }
+  
+  .panel button {
+    background-color: var(--accent-color-light);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 20px; /* Reduce bottom margin for cleaner layout */
+  }
+  
+  .panel button:hover {
+    background-color: #666;
+  }
+  
+  input,
+  select {
+    background: var(--background-color); /* Consistent background */
+    color: var(--text-color);
+  }
+  
+  input:focus,
+  select:focus {
+    background-color: var(--accent-color-light); /* Highlight on focus */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .panel {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  .nav-item {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      transition: top 0.3s ease-in-out;
+  }
+
+  .nav-item.searched {
+    top: -9vh;
+    transition: top 0.3s ease-in-out;
+  }
+
+  .nav-item.searched:hover {
+    top: 0;
+  }
+
+  .shadow-navbar {
+      background: rgba(0, 0, 0, 0.8);
+      border-bottom-left-radius: 15px;
+      border-left: white 2px solid;
+      border-bottom: white 2px solid;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .shadow-navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+  }
+
+  .shadow-navbar li {
+      margin: 0 5px;
+  }
+
+  .shadow-navbar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 8px 15px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+  }
+
+li.nav-item img {
+    height: 100%;
+    color: white;
+    display: block;
+    transition: all 1s;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav-item {
+    display: inline-block;
+    cursor: pointer !important;
+}
+
+li.nav-item a {
+    display: block;
+    transition: all .25s;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav-item a:hover {
+    background-color: #444;
+    border-radius: 15px;
+}

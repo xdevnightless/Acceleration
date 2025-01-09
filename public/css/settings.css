@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    height: 95vh;
+}
+
+.settings-container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.panel {
+    background-color: var(--border-color);
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin: 10px 0;
+    text-align: center;
+}
+
+input[type="text"],
+select,
+input[type="file"] {
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+#background-upload-button {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#background-upload-button:hover {
+    background-color: var(--highlight-color);
+}
+
+select {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+select:focus {
+    border-color: var(--highlight-color);
+}
+
+@media (max-width: 768px) {
+    .panel {
+        width: 100%;
+    }
+}

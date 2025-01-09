@@ -6,288 +6,18 @@
   <title>Acceleration About Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-       <ul class="navbar">
-
-        <li class="nav-item">
-            <nav class="shadow-navbar">
-                <ul>
-                    <li><a href="home.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
-                    <li><a href="games.html"><i class="fa-solid fa-gamepad"></i> <span>Games</span></a></li>
-                    <li><a href="apps.html"><i class="fas fa-mobile-alt"></i> <span>Apps</span></a></li>
-                    <li><a href="tabs.html"><i class="fa-solid fa-plus"></i> <span>Tabs</span></a></li>
-                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                                                          <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Tabs</span></a></li>
-
-                </ul>
-            </nav>
-
-
-  <style>
- body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at center, #2c2c2c 50%, #1a1a1a 100%); /* Dark grey background */
-  color: red; /* Red text color */
-  overflow-x: hidden;
-}
-
-body::-webkit-scrollbar {
-  width: 12px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #9a6fff;
-  border-radius: 6px;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  position: sticky;
-  top: 0;
-  background: rgba(13, 12, 34, 0.9);
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-nav .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #9a6fff;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-}
-
-nav .menu a {
-  text-decoration: none;
-  color: #fff;
-  margin: 0 1.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
-
-nav .menu a:hover {
-  color: #9a6fff;
-}
-
-nav .menu a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #9a6fff;
-  left: 50%;
-  bottom: -5px;
-  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-
-nav .menu a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-.projects {
-  padding: 3rem 4rem;
-}
-
-.projects h1 {
-  font-size: 3rem;
-  color: red; /* Red text color */
-  margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: black; /* Black card color */
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  color: red; 
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.project-card h3 {
-  color: red; /* Red heading inside the card */
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.project-card p {
-  color: #d9d9d9;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.project-card .github-button {
-  margin-top: 1rem;
-  text-decoration: none;
-  background: #333;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  border-radius: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.project-card .github-button i {
-  font-size: 1.2rem;
-  transition: transform 0.3s;
-}
-
-.project-card .github-button:hover {
-  background: #444;
-  transform: translateY(-2px);
-}
-
-.project-card .github-button:hover i {
-  transform: rotate(360deg);
-}
-
-.project-card .discord-button {
-  margin-top: 1rem;
-  text-decoration: none;
-  background: #333;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  border-radius: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.project-card .discord-button i {
-  font-size: 1.2rem;
-  transition: transform 0.3s;
-}
-
-.project-card .discord-button:hover {
-  background: #444;
-  transform: translateY(-2px);
-}
-
-.project-card .discord-button:hover i {
-  transform: rotate(360deg);
-}
-
-
-}
-
-.about-us {
-  padding: 3rem 4rem;
-}
-
-.about-us h1 {
-  font-size: 3rem;
-  color: red; 
-  margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.about-us p {
-  color: #d9d9d9;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.features {
-  padding: 3rem 4rem;
-}
-
-.features h1 {
-  font-size: 3rem;
-  color: red; 
-  margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.features table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.features th, .features td {
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #fff;
-}
-
-.contributions {
-  padding: 3rem 4rem;
-}
-
-.contributions h1 {
-  font-size: 3rem;
-  color: red; 
-  margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.rectangle {
-  background: black; 
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  color: red; 
-  margin-bottom: 1rem;
-}
-
-.rectangle:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.rectangle p {
-  color: #d9d9d9;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.fraction-line {
-  width: 100%;
-  height: 2px;
-  background-color: red; 
-  margin: 5px 0;
-}
-
-
-  </style>
+    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/about.css">
+  <link rel="stylesheet" href="/css/themes.css" />
+  <script src="/js/themes.js"></script>
 </head>
 <body>
   
-  <section class="projects">
-    <h1>My Projects</h1>
+
+  <section class="projects" id="projects">
+    <h1>About Us</h1>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card large">
         <h3>Acceleration</h3>
         <p>Experience the global internet using Acceleration, the most Accelerated Proxy in the world. The best looking proxy there is with Apps and tab cloaking and over 100+ games for students.</p>
         <a href="https://github.com/xdevnightless/Acceleration" class="github-button" target="_blank">
@@ -296,9 +26,8 @@ nav .menu a:hover::after {
         <a href="https://discord.gg/Kvwzdt4WzJ" class="discord-button" target="_blank">
           <i class="fab fa-discord"></i> View our Discord server
         </a>
-            </a>
-          </div>
-      <div class="project-card">
+      </div>
+      <div class="project-card large">
         <h3>Features</h3>
         <p><strong>Game Collection:</strong> Wide variety of games, optimized for performance.</p>
         <p><strong>Tab Cloaking:</strong> Seamlessly conceal your browsing activity with advanced tab cloaking.</p>
@@ -316,47 +45,51 @@ nav .menu a:hover::after {
           <li>GeForce NOW Support</li>
         </ul>
       </div>
-      <div class="project-card">
+    </div>
+  </section>
+  
+  <section class="developers" id="developers">
+    <h1>Developers</h1>
+    <div class="developer-grid">
+      <div class="project-card small">
         <h3>Nightless</h3>
         <p>Creator of Acceleration</p>
       </div>
-      <div class="project-card">
+      <div class="project-card small">
         <h3>Peak</h3>
         <p>Head Developer of Acceleration</p>
       </div>
-      <div class="project-card">
-        <h3>crumbler1</h3>
-        <p>Developer of Acceleration</p>
-      </div>
-      <div class="project-card">
-        <h3>Snorlax</h3>
-        <p>Developer of Acceleration</p>
-      </div>
-      <div class="project-card">
+      <div class="project-card small">
         <h3>Devman</h3>
         <p>Head Developer of Acceleration</p>
       </div>
-      <div class="project-card">
+      <div class="project-card small">
+        <h3>Snorlax</h3>
+        <p>Developer of Acceleration</p>
+      </div>
+      <div class="project-card small">
+        <h3>Crumbler1</h3>
+        <p>Developer of Acceleration</p>
+      </div>
+      <div class="project-card small">
         <h3>Potato</h3>
         <p>Developer of Acceleration</p>
       </div>
-      <div class="project-card">
-        <h3>Juinor</h3>
-        <p>Developer of Acceleration</p>
-      </div>
-      <div class="project-card">
-        <h3>Talenaatfield</h3>
-        <p>Developer of Acceleration</p>
-      </div>
-      <div class="project-card">
+     
+      <div class="project-card small">
         <h3>Demure</h3>
         <p>Developer of Acceleration</p>
       </div>
-      <div class="project-card">
-        <h3>Strucid</h3>
+      <div class="project-card small">
+        <h3>Wufflez/h3>
+        <p>Developer of Acceleration</p>
+      </div>
+    </div>  <div class="project-card small">
+        <h3>Rogo</h3>
         <p>Developer of Acceleration</p>
       </div>
     </div>
   </section>
+
 </body>
 </html>

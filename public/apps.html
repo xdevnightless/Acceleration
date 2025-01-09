@@ -2,315 +2,47 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="public/CSS/apps.css" />
-  <link rel="stylesheet" href="public/CSS/games.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <script src="public/js/settings.js" defer></script>
-  <script src="public/js/search.js" defer></script>
-  <script src="public/js/music.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/apps.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/js/register-sw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/js/settings.js"></script>
+    <link rel="stylesheet" href="/css/themes.css" />
+    <script src="/js/themes.js"></script>
+
+    
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin-top: 15vh;
+        }
+
+        .app-card {
+            background: #484848;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top: 4px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px;
+            width: 105px;
+        }
+    </style>
+    <title>Acceleration Apps</title>
 </head>
 
 <body>
-      <ul class="navbar">
-
-        <li class="nav-item">
-            <nav class="shadow-navbar">
-                <ul>
-                    <li><a href="home.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
-                    <li><a href="games.html"><i class="fa-solid fa-gamepad"></i> <span>Games</span></a></li>
-                    <li><a href="apps.html"><i class="fas fa-mobile-alt"></i> <span>Apps</span></a></li>
-                    <li><a href="tabs.html"><i class="fa-solid fa-plus"></i> <span>Tabs</span></a></li>
-                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                                                          <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Tabs</span></a></li>
-
-                </ul>
-            </nav>
-
-    </li>
-  </ul>
-</body>
-
-
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      margin-top: 80px; /* Adjust to the height of the navbar */
-    }
-
-    .shadow-navbar {
-      display: flex;
-      justify-content: center;
-      background: linear-gradient(145deg, #000000, #000000);
-      padding: 10px; /* Reduced padding */
-      border-radius: 15px; /* Slightly smaller border radius */
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      position: relative;
-    }
-
-    .shadow-navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 30px; /* Reduced gap between items */
-    }
-
-    .shadow-navbar ul li a {
-      font-size: 16px; /* Smaller font size */
-      color: white;
-    }
-
-    .shadow-navbar ul li a i {
-      font-size: 25px; /* Smaller icon size */
-      margin-bottom: 3px;
-    }
-
-    .shadow-navbar ul li a span {
-      font-size: 14px; /* Smaller label font size */
-    }
-
-    .shadow-navbar ul li a:hover i {
-      transform: scale(1.2); /* Smaller scale on hover */
-    }
-
-    .shadow-navbar ul li:hover::after {
-      width: 60%; /* Narrower underline on hover */
-    }
-
-    .app-card {
-      background: #484848;
-      padding-left: 7px;
-      padding-right: 7px;
-      padding-top: 4px;
-      padding-bottom: 20px;
-      border-radius: 5px;
-      text-align: center;
-      margin: 10px;
-      width: 105px; 
-    }
-
-    img {
-      margin: auto;
-      display: block;
-      border-radius: 7%;
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-            #spaceCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; 
-        }
-
-  </style>
-
-  <nav>
-    <div class="heading"></div>
-  </nav>
-
-  <canvas id="spaceCanvas"></canvas>
-
-  <div class="search-bar" style="display: flex; justify-content: center;">
-    <form id="searchForm" onsubmit="return false;">
-      <input id="searchApps" placeholder="Search Apps" class="searchbar">
-    </form>
-  </div>
-  <br>
- <div class="app-card">
-    <a href="https://scootydooter.vercel.app/" class="https://scootydooter.vercel.app/" onclick="Movie web()">
-        <img src="public/Apps/movie-web.webp" alt="Movie web" style="width:100px;height:100px;">
-        <br>Movie web
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://instagram.com" class="https://instagram.com" onclick="Instagram()">
-        <img src="public/Apps/instagram (1).png" alt="Instagram" style="width:100px;height:100px;">
-        <br>Instagram
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://www.reddit.com" class="https://www.reddit.com" onclick="Reddit()">
-        <img src="public/Apps/reddit.png" alt="Reddit" style="width:100px;height:100px;">
-        <br>Reddit
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://replit.com" class="https://replit.com" onclick="Replit()">
-        <img src="public/Apps/replit.png" alt="Replit" style="width:100px;height:100px;">
-        <br>Replit
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://open.spotify.com/" class="https://open.spotify.com/" onclick="Spotify()">
-        <img src="public/Apps/spotify.png" alt="Spotify" style="width:100px;height:100px;">
-        <br>Spotify
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://twitch.tv" class="https://twitch.tv" onclick="Twitch()">
-        <img src="public/Apps/twitch.png" alt="Twitch" style="width:100px;height:100px;">
-        <br>Twitch
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://cpstest.org" class="https://cpstest.org" onclick="CPS Tester()">
-        <img src="public/Apps/OIP.jpg" alt="CPS Tester" style="width:100px;height:100px;">
-        <br>CPS Tester
-    </a>
-</div>
-
-<div class="app-card">
-    <a href="https://tiktok.com" class="https://tiktok.com" onclick="Tiktok()">
-        <img src="public/Apps/tiktok (1).png" alt="Tiktok" style="width:100px;height:100px;">
-        <br>Tiktok
-    </a>
-</div>
-
-<div class="app-card">
-    <a href="https://roblox.com" class="https://Roblox.com" onclick="Roblox()">
-        <img src="public/Apps/roblox (1).png" alt="Roblox" style="width:100px;height:100px;">
-        <br>Roblox
-    </a>
-</div>
-
-<div class="app-card">
-    <a href="https://soundcloud.com" class="https://soundcloud.com" onclick="SoundCloud()">
-        <img src="public/Apps/soundcloud.png" alt="Soundcloud" style="width:100px;height:100px;">
-        <br>SoundCloud
-    </a>
-</div>
-
-<div class="app-card">
-    <a href="https://google.com" class="https://google.com" onclick="Widgetbot()">
-        <img src="public/Apps/widger.png" alt="Widgetbot" style="width:100px;height:100px;">
-        <br>Widgetbot
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://coolmathgames.com" class="https://coolmathgames.com" onclick="Coolmath Games()">
-        <img src="public/Apps/coolmathgames.png" alt="coolmathgames" style="width:100px;height:100px;">
-        <br>Coolmath Games
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://crazygames.com" class="https://crazygames.com" onclick="Crazygames()">
-        <img src="public/Apps/crazygames.jpg" alt="Crazygames" style="width:100px;height:100px;">
-        <br>Crazygames
-    </a> 
-</div>
-
-<div class="app-card">
-    <a href="https://github.com" class="https://github.com" onclick="Github()">
-        <img src="public/Apps/github-logo.png" alt="Github" style="width:100px;height:100px;">
-        <br>Github
-    </a> 
-</div>
-
-
+    <div class="search-bar" style="display: flex; justify-content: center;">
+        <form id="searchForm" onsubmit="return false;">
+            <input id="searchApps" placeholder="Search Apps" class="searchbar">
+        </form>
     </div>
-  </div>
-
-  <script>
-            const canvas = document.getElementById("spaceCanvas");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particlesArray = [];
-        const numberOfParticles = 100;
-
-        const mouse = {
-            x: null,
-            y: null,
-        };
-
-        window.addEventListener("mousemove", (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-
-        class Particle {
-            constructor(x, y, size, color) {
-                this.x = x;
-                this.y = y;
-                this.size = size;
-                this.color = color;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.shadowColor = "#ffffff";
-                ctx.shadowBlur = 20;
-                ctx.fill();
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-
-                const dx = mouse.x - this.x;
-                const dy = mouse.y - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 150) {
-                    this.x -= dx / 15;
-                    this.y -= dy / 15;
-                }
-            }
-        }
-
-        function init() {
-            particlesArray = [];
-            for (let i = 0; i < numberOfParticles; i++) {
-                const size = Math.random() * 3 + 1;
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                const color = "rgba(255, 255, 255, 0.8)";
-                particlesArray.push(new Particle(x, y, size, color));
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particlesArray.forEach((particle) => {
-                particle.update();
-                particle.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-  </script>
-
-</html>
+    <div class="app-links"></div>
+</body>
+<script src="/js/apps.js"></script>

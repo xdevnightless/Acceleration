@@ -11,18 +11,23 @@ self.__uv$config = {
 
 self.onload = () => {
   if (typeof window === "object" && self.constructor === Window && location.pathname.startsWith("/uv/service/")) {
-    const observer = new MutationObserver((mutations) => {
-      parent.updateOmni(mutations[0].target.text);
-    });
+    if (__uv$config.eval) {
+      for (code in __uv$config.eval) {
+        eval(code);
+      }
+      const observer = new MutationObserver((mutations) => {
+        parent.updateOmni(mutations[0].target.text);
+      });
 
-    observer.observe(document.querySelector("title"), {
-      subtree: true,
-      characterData: true,
-      childList: true,
-    })
-    try {
-      parent.updateCurrentTab(document.title);
-      parent.updateOmni();
-    } catch (_) { }
+      observer.observe(document.querySelector("title"), {
+        subtree: true,
+        characterData: true,
+        childList: true,
+      })
+      try {
+        parent.updateCurrentTab(document.title);
+        parent.updateOmni();
+      } catch (_) { }
+    }
   }
 }

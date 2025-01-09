@@ -1,0 +1,142 @@
+[   {
+      "name": "Replit",
+      "link": "https://replit.com",
+      "icon": "/images/replit.png"
+    },
+    {
+      "name": "Spotify",
+      "link": "https://open.spotify.com",
+      "icon": "/images/spotify.png"
+    },
+    {
+      "name": "Twitch",
+      "link": "https://twitch.tv",
+      "icon": "/images/twitch.png"
+    },
+    {
+      "name": "CPS Tester",
+      "link": "https://cpstest.org",
+      "icon": "/images/cps-tester.jpg"
+    },
+    {
+      "name": "TikTok",
+      "link": "https://tiktok.com",
+      "icon": "/images/tiktok.png"
+    },
+    {
+      "name": "Roblox",
+      "link": "https://roblox.com",
+      "icon": "/images/roblox.png"
+    },
+    {
+      "name": "SoundCloud",
+      "link": "https://soundcloud.com",
+      "icon": "/images/soundcloud.png"
+    },
+    {
+      "name": "Coolmath Games",
+      "link": "https://coolmathgames.com",
+      "icon": "/images/coolmathgames.png"
+    },
+    {
+      "name": "Crazygames",
+      "link": "https://crazygames.com",
+      "icon": "/images/crazygames.jpg"
+    },
+    {
+      "name": "GitHub",
+      "link": "https://github.com",
+      "icon": "/images/github.png"
+    },
+    {
+      "name": "Geforce",
+      "link": "https://play.geforcenow.com",
+      "icon": "/images/geforce.png"
+    },
+    {
+      "name": "Chess",
+      "link": "https://chess.com",
+      "icon": "/images/chess.png"
+    },
+    {
+      "name": "Discord",
+      "link": "https://canary.discord.com",
+      "icon": "/images/discord.jpg"
+    },
+    {
+      "name": "Amazon",
+      "link": "https://amazon.com",
+      "icon": "/images/amazon.png"
+    },
+    {
+      "name": "WhatsApp",
+      "link": "https://web.whatsapp.com",
+      "icon": "/images/whatsapp.png"
+    },
+    {
+      "name": "YouTube",
+      "link": "https://youtube.com",
+      "icon": "/images/youtube.png"
+    },
+    {
+      "name": "VS Code",
+      "link": "https://vscode.dev",
+      "icon": "/images/vscode.png"
+    },
+    {
+      "name": "Crunchyroll",
+      "link": "https://crunchyroll.com",
+      "icon": "/images/crunchyroll.png"
+    },
+    {
+      "name": "Bing",
+      "link": "https://bing.com",
+      "icon": "/images/bing.png"
+    },
+    {
+      "name": "Pokemon Go",
+      "link": "https://pokemongolive.com",
+      "icon": "/images/pokemongo.png"
+    },
+    {
+      "name": "Steam",
+      "link": "https://steam.com",
+      "icon": "/images/steam.png"
+    },
+    {
+      "name": "Yahoo",
+      "link": "https://yahoo.com",
+      "icon": "/images/yahoo.png"
+    },
+    {
+      "name": "Snapchat",
+      "link": "https://snapchat.com",
+      "icon": "/images/snapchat.png"
+    },
+    {
+      "name": "Minecraft",
+      "link": "https://eaglercracker.vercel.app/clients.html",
+      "icon": "/images/minecraft.png"
+    },
+    {
+      "name": "Opera GX",
+      "link": "https://operagx.com",
+      "icon": "/images/operagx.png"
+    },
+    {
+      "name": "Netflix",
+      "link": "https://netflix.com",
+      "icon": "/images/netflix.png"
+    },
+    {
+      "name": "HBO Max",
+      "link": "https://www.max.com",
+      "icon": "/images/max.png"
+    },
+    {
+      "name": "Pinterest",
+      "link": "https://www.pinterest.com",
+      "icon": "/images/pinterest.png"
+    }
+  ]
+  

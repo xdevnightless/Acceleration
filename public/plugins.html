@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceleration - Plugins</title>
+    <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="/css/plugins.css">
+</head>
+
+<body>
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search extensions...">
+    </div>
+
+    <div class="extensions-list" id="extensions-container">
+        <!-- Extensions will be dynamically loaded here -->
+    </div>
+    <script type="module">
+        import { getPluginObjects, getPlugin, getPluginInfo, enablePlugin, disablePlugin } from '/js/plugin_manager.js';
+
+        let extensions;
+
+        function createExtensionCard(extension, container) {
+            const card = document.createElement('div');
+            card.className = 'extension-card';
+            card.innerHTML = `
+                <img src="${extension.icon}" alt="${extension.name}" class="extension-icon">
+                <div class="extension-info">
+                    <h3 class="extension-title">${extension.name}</h3>
+                    <p class="extension-description">${extension.description}</p>
+                </div>
+                <div class="extension-controls">
+                    <label class="toggle-switch">
+                        <input type="checkbox" ${extension.enabled ? 'checked' : ''}>
+                        <span class="slider"></span>
+                    </label>
+                    <button class="details-btn">Details</button>
+                </div>
+            `;
+
+            container.appendChild(card);
+
+            const toggleSwitch = card.querySelector('input[type="checkbox"]');
+            toggleSwitch.addEventListener('change', () => {
+                extension.enabled = toggleSwitch.checked;
+                if (toggleSwitch.checked) {
+                    console.log(extension)
+                    enablePlugin(extension.id);
+                } else {
+                    disablePlugin(extension.id);
+                }
+            });
+
+            const detailsBtn = card.querySelector('.details-btn');
+            detailsBtn.addEventListener('click', () => showModal(extension));
+        }
+
+        async function init() {
+            const extensionsContainer = document.getElementById('extensions-container');
+            const searchInput = document.getElementById('search-input');
+
+            extensions = await getPluginObjects();
+            extensions.forEach(ext => createExtensionCard(ext, extensionsContainer));
+
+            searchInput.addEventListener('keyup', (e) => {
+                console.log(e.target.value)
+                const searchTerm = searchInput.value.toLowerCase();
+                const cards = document.querySelectorAll('.extension-card');
+
+                cards.forEach(card => {
+                    const title = card.querySelector('.extension-title').textContent.toLowerCase();
+                    const description = card.querySelector('.extension-description').textContent.toLowerCase();
+                    const isVisible = title.includes(searchTerm) || description.includes(searchTerm);
+                    card.style.display = isVisible ? 'grid' : 'none';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+        const modal = document.getElementById('detailsModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+
+        function showModal(extension) {
+            modalTitle.textContent = extension.name;
+            modalDescription.textContent = extension.description;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
