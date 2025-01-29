@@ -108,9 +108,12 @@ select:focus {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 12vh;
-  border-bottom: 2px solid #451069;
-  border-radius: 20%;
+  height: 10vh;
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom: 2px solid #4510697a;
+  background-color: rgba(0, 0, 0, 0.288);
+
 }
 
 .shadow-navbar ul {
@@ -129,7 +132,8 @@ select:focus {
   color: var(--icon-color);
   text-decoration: none;
   display: flex;
-  width: 12vw;
+  width: 9vw;
+  margin: 0px 2px 0px 2px;
   align-items: center;
   padding: 8px 15px;
   border-radius: 10px;
@@ -158,14 +162,6 @@ select:focus {
   opacity: 0;
 }
 
-li.nav-item img {
-  color: white;
-  display: block;
-  transition: all 1s;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
 li.nav-item {
   display: inline-block;

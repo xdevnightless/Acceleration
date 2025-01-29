@@ -69,7 +69,7 @@
 
       setupBaremux();
 
-      function checkPopups() {
+      /* function checkPopups() {
         var newWin = window.open("", "", "width=100, height=100");
         if (newWin) {
           newWin.close();
@@ -79,7 +79,7 @@
           return false;
         }
       }
-
+*/
       window.addEventListener("load", function () {
         var currentUrl = window.location.href;
         var bgUrl = localStorage.getItem("backgroundImage");
@@ -172,7 +172,7 @@
       const params = new URLSearchParams(window.location.search);
       if (params.has("page")) page(params.get("page"));
       function page(link, hideNavbar) {
-        if (hideNavbar || link == "/tabs.html" || link == "/chat.html")
+        if (hideNavbar || link == "/tabs.html" || link == "/chat.html" || link == "/about.html")
           hideNav();
         else showNav();
         document.getElementById("frame").src = link;
