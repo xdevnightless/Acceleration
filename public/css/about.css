@@ -1,9 +1,11 @@
-
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at center, var(--secondary-background-color) 50%, var(--tertiary-background-color) 100%);
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(
+    circle at center,
+    var(--secondary-background-color) 50%,
+    var(--tertiary-background-color) 100%
+  );
   color: var(--primary-color);
   overflow-x: hidden;
 }
@@ -25,19 +27,22 @@ body {
   background-color: var(--highlight-color);
 }
 
-.projects, .developers {
+.projects,
+.developers {
   padding: 3rem 4rem;
   padding-top: 0;
 }
 
-.projects h1, .developers h1 {
+.projects h1,
+.developers h1 {
   font-size: 3rem;
   color: var(--primary-color);
   margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.project-grid, .developer-grid {
+.project-grid,
+.developer-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -58,11 +63,11 @@ body {
 }
 
 .project-card.large {
-  flex: 1 1 600px; 
+  flex: 1 1 600px;
 }
 
 .project-card.small {
-  flex: 1 1 250px; 
+  flex: 1 1 250px;
   text-align: center;
 }
 
@@ -116,7 +121,7 @@ body {
 }
 
 .developers {
-  border-top: 2px solid var(--primary-color); 
+  border-top: 2px solid var(--primary-color);
 }
 .titlecard {
   margin-bottom: 2vh;
