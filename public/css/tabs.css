@@ -10,7 +10,8 @@ body {
   background-image: linear-gradient(to right, var(--background-gradient));
   color: var(--primary-color);
 }
-
+canvas {
+}
 .chrome-container {
   display: flex;
   flex-direction: column;

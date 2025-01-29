@@ -87,10 +87,10 @@ select:focus {
 }
 
 .nav-item {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 2;
   transition: top 0.3s ease-in-out;
 }
 
