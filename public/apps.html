@@ -14,35 +14,36 @@
     <link rel="stylesheet" href="/css/themes.css" />
     <script src="/js/themes.js"></script>
 
-    
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            margin-top: 15vh;
-        }
-
-        .app-card {
-            background: #484848;
-            padding-left: 7px;
-            padding-right: 7px;
-            padding-top: 4px;
-            padding-bottom: 20px;
-            border-radius: 5px;
-            text-align: center;
-            margin: 10px;
-            width: 105px;
-        }
-    </style>
     <title>Acceleration Apps</title>
 </head>
 
 <body>
+    <canvas id="canvas"></canvas>
+
+    <script src="js/starback.js"></script>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const starback = new Starback(canvas, {
+            width: document.body.clientWidth,
+            height: document.body.clientHeight,
+            type: "dot",
+            quantity: 150,
+            randomOpacity: false,
+            starSize: [1, 2],
+            starColor: '#390e6e',
+            backgroundColor: 'transparent'
+        });
+    </script>
+
     <div class="search-bar" style="display: flex; justify-content: center;">
         <form id="searchForm" onsubmit="return false;">
             <input id="searchApps" placeholder="Search Apps" class="searchbar">
         </form>
     </div>
+
     <div class="app-links"></div>
+
+    <script src="/js/apps.js"></script>
 </body>
-<script src="/js/apps.js"></script>
+
+</html>

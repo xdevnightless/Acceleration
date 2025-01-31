@@ -1,12 +1,12 @@
-# Acceleration Experience the global internet using Acceleration, the most Accelerated Proxy in the world The best looking proxy there is with Apps and tab cloaking and over 100+ games for students
 
 
 
+![inpreview](https://github.com/xdevnightless/Acceleration/blob/main/Backround.png)
 
 > [!IMPORTANT]
 > If you fork this project, consider giving it a star in the original repository!
 
-**Join Our [Discord Community](https://discord.gg/Kvwzdt4WzJ) for support, more links, and an active community!**
+**Join Our [Discord Community](https://discord.gg/acceleration) for support, more links, and an active community!**
 
 
 
@@ -27,7 +27,7 @@
 | `🎶 Built-In Music Player` | Add a soundtrack to your experience and make browsing even cooler! |
 | `📂 Tab System` | Use our tabs to play games or whahtever you want  easily with the integrated tab system. |
 | `🔗 Testing Link` | Use our testing link to test the site so you know what to suggest for our site |
- https://shadowaccerltion.netlify.app/
+ https://devman.goated.fr.8bit.ca/
 ## Credits: A huge thanks goes out to all of the people who have contributed to Acceleration.
 
 ![Contrib](https://contrib.rocks/image?repo=Shadowproxynetwork/Shadownetwork) <a href="https://github.com/xdevnightless/Acceleration/graphs/contributors">
@@ -43,9 +43,7 @@
   <img src="https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/main/buttons/remade/render.svg" alt="Deploy on Render">
 </a>
 
-<a href="https://vercel.com/new/clone?repositoryurl=https://github.com/xdevnightless/Acceleration">
-  <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg" alt="Deploy with Vercel">
-</a>
+
 
 <a href="https://app.koyeb.com/deploy?type=git&repository=https://github.com/xdevnightless/Acceleration">
   <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg" alt="Deploy to Koyeb">
@@ -76,6 +74,6 @@
 
 
 ## Join our Discord!
-[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/xyRJwtBmMH)
+[![Join us on Discord](https://invidget.switchblade.xyz/Kvwzdt4WzJ?theme=dark)](https://discord.gg/acceleration)
 
 

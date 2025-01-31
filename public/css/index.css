@@ -1,12 +1,14 @@
+:root {
+  --primary-color: purple;
+  --highlight-color: purple;
+}
 
-
-/* Text Styling */
 .text {
   position: relative;
   top: -20vh;
-  font-size: 20vh;
+  font-size: 18vh;
   color: var(--primary-color);
-  font-family: "Roboto", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   text-transform: uppercase;
   border-radius: 0px 0px 5px 5px;
@@ -17,34 +19,23 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Hover Effect for Text */
-.text:hover {
-  position: relative;
-  font-size: 20vh;
-  color: var(--primary-color);
   font-family: "Roboto", sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 0px 0px 5px 5px;
+  height: 100vh;
 }
 
-/* Media Query for Portrait Orientation */
 @media (orientation: portrait) {
   .text {
-      position: relative;
-      top: -10vw;
-      font-size: 10vw;
-      color: var(--primary-color);
-      font-family: "Roboto", sans-serif;
-      text-align: center;
-      text-transform: uppercase;
-      border-radius: 0px 0px 5px 5px;
+    position: relative;
+    top: -10vw;
+    font-size: 10vw;
+    color: var(--primary-color);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 0px 0px 5px 5px;
   }
 }
 
-/* Text Animation */
 .text::before {
   content: attr(data-text);
   position: absolute;
@@ -57,13 +48,48 @@ body {
   filter: drop-shadow(0 0 20px var(--highlight-color)) drop-shadow(0 0 50px var(--highlight-color));
 }
 
-/* Keyframes for Animation */
 @keyframes animate {
   0%, 10%, 100% {
-      width: 0;
+    width: 0;
   }
-
   70%, 90% {
-      width: 100%;
+    width: 100%;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#frame {
+  border: 0px solid black;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  bottom: 0px;
+  left: 0px;
+}
+
+li.icon img {
+  size: 100%;
+  color: white;
+  display: block;
+  color: white;
+  transition: all 1s;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.icon {
+  float: left;
+  cursor: pointer !important;
+}
+
+li.icon:hover {
+  background-color: #444;
+  border-radius: 15px;
 }

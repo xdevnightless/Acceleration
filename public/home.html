@@ -1,16 +1,120 @@
-<title>Home Acceleration </title>
-<script src="/uv/uv.bundle.js" defer></script>
-<script src="/uv/uv.config.js" defer></script>
-<script src="/js/register-sw.js" defer></script>
-<script src="/js/search.js" defer></script>
-<link href="/css/index.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/themes.css" />
-<script src="/js/themes.js"></script>
-<form class="searchform" id="searchform">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Acceleration</title>
+    <link href="/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/themes.css">
+    <script src="/uv/uv.bundle.js" defer></script>
+    <script src="/uv/uv.config.js" defer></script>
+    <script src="/js/register-sw.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script src="/js/themes.js"></script>
+    <style>
+
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--primary-color);
+        overflow: hidden;
+      }
+
+      #title {
+        width: 100%;
+        position: absolute;
+        bottom: 60%;
+        left: 0;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-shadow: 3px 6px 10px var(--secondary-color), 0 0 20px var(--highlight-color);
+        letter-spacing: 2px;
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 3px 6px 10px var(--highlight-color), 0 0 20px var(--primary-color);
+        }
+        100% {
+          text-shadow: 3px 6px 10px var(--highlight-color), 0 0 40px var(--highlight-color);
+        }
+      }
+
+      #searchbar {
+        height: 10vh;
+        width: 80vw;
+        position: absolute;
+        bottom: 45%;
+        left: 11%;
+        padding: 10px;
+        border-radius: 50px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 3px solid var(--primary-color);
+        text-align: center;
+        background: transparent;
+        transition: all 1s;
+        filter: drop-shadow(0 0 20px #151414) drop-shadow(0 0 50px #151414);
+        transform: translateY(-5%);
+        background-color: #151414;
+      }
+
+      #searchbar:hover {
+        transform: translateY(-5%) scale(1.05);
+        background-color: rgba(21, 20, 20, 0.9);
+        box-shadow: 0 0 50px var(--highlight-color);
+      }
+
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        animation: snowflakes-fall 15s linear infinite, snowflakes-shake 5s ease-in-out infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes snowflakes-fall {
+        100% {
+          transform: translateY(100vh);
+          top: 100%;
+        }
+      }
+
+      @keyframes snowflakes-shake {
+        50% {
+          transform: translateX(50px) rotate(15deg);
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="logo-wrapper">
+        <h1 data-text="&nbsp;Acceleration" class="text">&nbsp;Acceleration</h1>
+    </div>
+
     <form class="searchform" id="searchform" method="get" action="https://www.google.com/search">
-        <input class="search-bar" id="searchbar" placeholder="Search Google or Type a Address" type="text" size="31"
-            value="">
-     
+        <input class="search-bar" id="searchbar" placeholder="Search Google or Type a Address" type="text" size="31" value="">
         <script>
             document.getElementById("searchform").addEventListener("submit", async function (event) {
                 event.preventDefault();
@@ -24,188 +128,13 @@
                 top.hideNav();
             });
         </script>
-        <div class="logo-wrapper">
-            <h1 data-text="&nbsp;Acceleration" class="text">&nbsp;Acceleration</h1>
-        </div>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+    </form>
 
-
-
-            #title {
-                width: 100%;
-                position: absolute;
-                bottom: 60%;
-                left: 0px;
-                text-align: center;
-                color: var(--primary-color);
-                text-shadow: 3px 6px 2px var(--secondary-color);
-            }
-
-            #searchbar {
-                height: 50px;
-                width: 70%;
-                position: absolute;
-                bottom: 45%;
-                left: 15%;
-                padding: 3px;
-                border-radius: 15px;
-                background: transparent;
-                border: 2px solid black;
-                text-align: center;
-                color: var(--primary-color);
-                border: 3px solid var(--primary-color);
-                transition: all 1s;
-                filter: drop-shadow(0 0 20px #151414) drop-shadow(0 0 50px #151414);
-            }
-
-            #searchbar:hover {
-                transform: translateY(-5%);
-                background-color: #151414;
-            }
-
-            #searchbar::placeholder {
-                color: var(--primary-color);
-            }
-
-            body {
-                font-family: "Inter", sans-serif;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: var(--primary-color);
-                overflow: hidden;
-            }
-
-            #title {
-                width: 100%;
-                position: absolute;
-                bottom: 60%;
-                left: 0;
-                text-align: center;
-                font-size: 3rem;
-                font-weight: bold;
-                color: var(--primary-color);
-                text-shadow: 3px 6px 10px var(--secondary-color), 0 0 20px var(--highlight-color);
-                letter-spacing: 2px;
-                animation: glow 2s infinite alternate;
-            }
-
-            @keyframes glow {
-                0% {
-                    text-shadow: 3px 6px 10px var(--highlight-color), 0 0 20px var(--primary-color);
-                }
-
-                100% {
-                    text-shadow: 3px 6px 10px var(--highlight-color), 0 0 40px var(--highlight-color);
-                }
-            }
-
-            #searchbar {
-                height: 50px;
-                width: 70%;
-                position: absolute;
-                bottom: 45%;
-                left: 15%;
-                padding: 10px;
-                border-radius: 30px;
-                background: rgba(0, 0, 0, 0.6);
-                border: 3px solid var(--primary-color);
-            }
-
-            h1,
-            h2,
-            h3 {
-                color: var(--primary-color);
-                text-align: center;
-                font-size: 1.2rem;
-                transition: all 0.5s ease;
-                filter: drop-shadow(0 0 20px var(--primary-color));
-            }
-
-            #searchbar:hover {
-                transform: translateY(-5%) scale(1.05);
-                background-color: rgba(21, 20, 20, 0.9);
-                box-shadow: 0 0 50px var(--highlight-color);
-            }
-
-            #searchbar::placeholder {
-                a {
-                    color: var(--secondary-color);
-                }
-            }
-
-            .particles {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: -1;
-                right: 0;
-                bottom: 0;
-                z-index: 9999;
-                pointer-events: none;
-            }
-
-            .particle {
-                position: absolute;
-                width: 15px;
-                height: 15px;
-                background-color: var(--primary-color);
-                border-radius: 50%;
-                animation: snowflakes-fall 15s linear infinite, snowflakes-shake 5s ease-in-out infinite;
-                opacity: 0.8;
-                flex: 1;
-                position: relative;
-                top: -10%;
-                animation: snowflakes-fall 15s linear, snowflakes-shake 5s ease-in-out;
-                animation-delay: var(--d);
-                animation-iteration-count: infinite;
-                width: 10%;
-                height: 10%;
-                color: white;
-            }
-
-            @keyframes snowflakes-fall {
-                100% {
-                    transform: translateY(100vh);
-                    top: 100%;
-                }
-            }
-
-            @keyframes snowflakes-shake {
-                50% {
-                    transform: translateX(50px) rotate(15deg);
-                    transform: translateX(100px) rotate(5deg);
-                }
-            }
-
-            h1,
-            h2,
-            h3 {
-                color: var(--primary-color);
-            }
-
-            a {
-                color: var(--highlight-color);
-                text-decoration: none;
-            }
-
-            a:hover {
-                text-decoration: underline;
-                color: var(--primary-color);
-            }
-        </style>
-        <audio autoplay="true">
-            <source src="Cyber_Shards_Vip.mp4" type="audio/mp4">
-        </audio>
-        <script>
-            try { parent.updateCurrentTab("Acceleration Home"); } catch (_) { };
-        </script>
-
-        </html>
+    <audio autoplay="true">
+        <source src="Cyber_Shards_Vip.mp4" type="audio/mp4">
+    </audio>
+    <script>
+        try { parent.updateCurrentTab("Acceleration Home"); } catch (_) { }
+    </script>
+</body>
+</html>

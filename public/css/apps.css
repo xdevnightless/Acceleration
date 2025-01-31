@@ -10,6 +10,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: black;
+  color: white;
+  margin-top: 15vh;
 }
 
 .center {
@@ -393,3 +396,14 @@ body {
   transition: all 0.3s ease;
   border-radius: 5px;
 }
+        .app-card {
+            background: #484848;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top: 4px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px;
+            width: 105px;
+        }
