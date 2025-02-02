@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -26,6 +27,52 @@
     <script src="/js/settings.js" defer></script>
     <script src="/js/themes.js"></script>
     <title>Settings Panel</title>
+    <style>
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+    </style>
   </head>
 
   <body>
@@ -117,6 +164,7 @@
         />
       </div>
 
+      <!-- Panic Key -->
       <div class="panel" id="panic-settings">
         <label>Panic Key</label>
         <p class="description">Press any key combination:</p>
@@ -128,13 +176,22 @@
           Save
         </button>
       </div>
+
+      <div class="panel" id="particle-web-settings">
+        <p class="description">Toggle Particals</p>
+        <label class="switch">
+          <input type="checkbox" id="particle-switch" />
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 
     <script>
+      // Urm what the sigma
       document.getElementById("name-input").value =
-        JSON.parse(localStorage.getItem("cloak"))["title"] ?? "Acceleration";
+        JSON.parse(localStorage.getItem("cloak"))?.title ?? "Acceleration";
       document.getElementById("icon-input").value =
-        JSON.parse(localStorage.getItem("cloak"))["icon"] ?? "/favicon.ico";
+        JSON.parse(localStorage.getItem("cloak"))?.icon ?? "/favicon.ico";
       document.getElementById("panicKeybind").value =
         localStorage.getItem("panicKey") ?? "Shift+~";
       document.getElementById("antiCloseStatus").innerText +=
@@ -142,35 +199,155 @@
       document.getElementById("theme-select").value =
         localStorage.getItem("theme") ?? "default";
 
-      const panicKeybindInput = document.getElementById("panicKeybind");
+      // skibidi toilet
+      (function () {
+        let particlesEnabled = localStorage.getItem("particlesEnabled") === "true";
+        const particleSwitch = document.getElementById("particle-switch");
+        particleSwitch.checked = particlesEnabled;
+        if (particlesEnabled) {
+          enableParticles();
+        }
+      })();
 
+      document.getElementById("particle-switch").addEventListener("change", function () {
+        if (this.checked) {
+          enableParticles();
+          localStorage.setItem("particlesEnabled", "true");
+        } else {
+          disableParticles();
+          localStorage.setItem("particlesEnabled", "false");
+        }
+      });
+
+      const panicKeybindInput = document.getElementById("panicKeybind");
       panicKeybindInput.addEventListener("focus", () => {
         document.addEventListener("keydown", handlepanicKeybindInput);
       });
-
       panicKeybindInput.addEventListener("blur", () => {
         document.removeEventListener("keydown", handlepanicKeybindInput);
       });
-
       function handlepanicKeybindInput(event) {
         event.preventDefault();
         const key = event.key;
         const modifiers = [];
-
         if (event.ctrlKey) modifiers.push("Ctrl");
         if (event.shiftKey) modifiers.push("Shift");
         if (event.altKey) modifiers.push("Alt");
         if (event.metaKey) modifiers.push("Meta");
-
         const panicKeybind = [...modifiers, key].join("+");
         panicKeybindInput.value = panicKeybind;
       }
 
-      function saveTheme(
-        theme = document.getElementById("theme-select").value
-      ) {
+      function saveTheme(theme = document.getElementById("theme-select").value) {
         localStorage.setItem("theme", theme);
         loadTheme(theme);
+      }
+
+      function enableParticles() {
+        if (!document.getElementById("particles-js")) {
+          const particlesDiv = document.createElement("div");
+          particlesDiv.id = "particles-js";
+          particlesDiv.style.position = "fixed";
+          particlesDiv.style.top = "0";
+          particlesDiv.style.left = "0";
+          particlesDiv.style.width = "100%";
+          particlesDiv.style.height = "100%";
+          particlesDiv.style.zIndex = "-1";
+          document.body.appendChild(particlesDiv);
+        }
+        particlesJS("particles-js", {
+          "particles": {
+            "number": {
+              "value": 100,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": false
+            },
+            "size": {
+              "value": 3,
+              "random": true
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 3,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out"
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "grab"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 200,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 100,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        });
+        console.log("Particles enabled");
+      }
+
+      function disableParticles() {
+        const particlesDiv = document.getElementById("particles-js");
+        if (particlesDiv) {
+          particlesDiv.parentNode.removeChild(particlesDiv);
+          console.log("Particles disabled");
+        }
       }
     </script>
   </body>
