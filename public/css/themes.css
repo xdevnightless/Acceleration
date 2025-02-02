@@ -217,3 +217,13 @@
     --border-color: #660000;
     --icon-color: #ffa07a;
 }
+
+:root.deep-ocean {
+    --primary-color: #016bff;
+    --secondary-color: rgb(58, 151, 217);
+    --highlight-color: #3112bc;
+    --background-gradient: #15046b, #15046b;
+    --background-color: #0e6ab1;
+    --border-color: #0698e0;
+    --icon-color: #078385;
+}
