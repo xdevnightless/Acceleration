@@ -63,7 +63,7 @@
       async function setupBaremux() {
         const conn = new BareMux.BareMuxConnection("/baremux/worker.js");
         await conn.setTransport("/epoxy/index.mjs", [
-          { wisp: `wss://${location.origin}/wisp/` },
+          { wisp: `wss://${location.host}/wisp/` },
         ]);
       }
 
