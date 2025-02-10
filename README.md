@@ -26,6 +26,7 @@
 | `💬 Widgetbot Integration` | Connect, chat, and collaborate seamlessly right in the app. |
 | `🎶 Built-In Music Player` | Add a soundtrack to your experience and make browsing even cooler! |
 | `📂 Tab System` | Use our tabs to play games or whahtever you want  easily with the integrated tab system. |
+  | `💽 Plugins` | On the plugins page, you can browse a library of scripts that you can apply to Acceleration.. Proxy Injection scripts affect web browsing, whilst Modules affect Acceleration itself. If you wan't to create your own modules or scripts, use the script editor to create and modify anything you want in Acceleration.|
 | `🔗 Testing Link` | Use our testing link to test the site so you know what to suggest for our site |
  https://devman.goated.fr.8bit.ca/
 ## Credits: A huge thanks goes out to all of the people who have contributed to Acceleration.
