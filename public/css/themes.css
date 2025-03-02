@@ -217,3 +217,13 @@
     --border-color: #660000;
     --icon-color: #ffa07a;
 }
+
+:root.rainbow{
+    --primary-color: #ff0000;
+    --secondary-color: rgb(255, 128, 0);
+    --highlight-color: #e0d800;
+    --background-gradient: #26ff00, #00ffd5;
+    --background-color: #001aff;
+    --border-color: #7b00ff;
+    --icon-color: #ff0000;
+}
