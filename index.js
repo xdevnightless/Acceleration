@@ -7,7 +7,7 @@ import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { join } from "path";
-import { pluginList, getPlugin, getPluginInfo } from "./plugins/manager.js"
+import { pluginList, getPluginCode, getPluginInfo } from "./plugins/manager.js"
 import httpProxy from 'http-proxy';
 
 const port = 8080;
@@ -16,6 +16,7 @@ const app = express();
 const server = createServer();
 
 app.use(express.static(publicPath, { maxAge: 604800000 })); //1 week
+app.use("/wisp-client/", express.static("/workspaces/Acceleration/node_modules/@mercuryworkshop/wisp-client-js/src/"));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/libcurl/", express.static(libcurlPath));
 app.use("/baremux/", express.static(baremuxPath));
@@ -25,14 +26,14 @@ app.use("/api/plugins", async (req, res) => {
     if (id && pluginList.includes(id)) {
         switch (req.headers['x-plugin-type']) {
             case 'code':
-                res.status(200).send((await getPlugin(id)).toString());
+                res.status(200).send((await getPluginCode(id)).toString());
                 break;
             case 'info':
                 res.status(200).send(await getPluginInfo(id));
                 break;
             case 'full':
                 res.status(200).send({
-                    code: (await getPlugin(id)).toString(),
+                    code: (await getPluginCode(id)).toString(),
                     info: await getPluginInfo(id)
                 });
                 break;

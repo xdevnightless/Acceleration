@@ -1,16 +1,19 @@
 //Not skidded from Shadow, commissioned by Peak (All code is brand new, although it has a very similar structure to my other tabbed projects)
 
 import { BareMuxConnection } from "/baremux/index.mjs"
+import { PluginRunner } from "/js/plugin_runner.js"
 
 export class TabManager {
     constructor() {
         navigator.serviceWorker.register("/uv/sw.js");
+        this.PluginRunner = new PluginRunner();
         this.connection = new BareMuxConnection("/baremux/worker.js")
         this.tabsArr = [];
         this.activeTabIndex = -1;
         this.encode = (str) => { return __uv$config.encodeUrl(str) };
         this.decode = (str) => { return __uv$config.decodeUrl(str) };
         document.querySelector('#url-input').onkeydown = (e) => { if (e.key == "Enter") { this.load(e.target.value); }; };
+        
     }
 
     fullscreen() {
@@ -161,7 +164,7 @@ export class TabManager {
         this.tabsArr[index].tab.children[1].innerText = title;
     }
 
-    async setTransport(transport = '/epoxy/index.mjs', url = `wss://${location.host}/wisp/`) {
+    async setTransport(transport = localStorage.getItem("transport") || '/epoxy/index.mjs', url = localStorage.getItem("server") || `wss://${location.host}/wisp/`) {
         await this.connection.setTransport(transport, [{ wisp: url }]);
         return true;
     }

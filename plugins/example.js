@@ -6,7 +6,7 @@ export default {
      * network - Adds the function as a `fetch` listener, requires the `req` attribute and must return something
      * tag - A `<script>` tag with the anonomous function will be appened to either the head or body of the document
      */
-    'code': Function,
+    'code': Function || String,
 
     'info': {
         /** 
@@ -53,6 +53,6 @@ export default {
         /**
          * Regular expression to limit what hosts the plugin effects (optional)
          */
-        'hosts': RegExp
+        'hosts': String(RegExp)
     }
 }

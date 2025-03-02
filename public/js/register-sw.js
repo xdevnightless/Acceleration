@@ -24,5 +24,10 @@ async function registerSW() {
     throw new Error("Your browser doesn't support service workers.");
   }
 
-  await navigator.serviceWorker.register(stockSW);
+  await navigator.serviceWorker.register(stockSW).then((registration) => {
+    registration.active.postMessage({
+      'reason': 'user-agent',
+      'data': localStorage.getItem("user-agent")
+    });
+  });
 }

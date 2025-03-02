@@ -1,50 +1,40 @@
-let plugins = JSON.parse(localStorage.getItem('plugins') || '[]');
-console.log(plugins)
+import PluginRunner from "./plugin_runner.js";
 
-function enablePlugin(id) {
-    plugins.push(id);
-    console.log(plugins)
-    localStorage.setItem('plugins', JSON.stringify(plugins));
-}
-
-function disablePlugin(id) {
-    plugins = plugins.filter(plugin => plugin !== id);
-    console.log(plugins)
-    localStorage.setItem('plugins', JSON.stringify(plugins));
-}
-
-async function getPluginObjects() {
-    const pluginsList = await getPlugins();
-    const pluginObjects = [];
-    for (const plugin of pluginsList) {
-        const pluginInfo = await getPluginInfo(plugin);
-        pluginObjects.push({
-            ...pluginInfo,
-            enabled: plugins.includes(plugin),
-            id: plugin,
-        });
+export default class PluginManager extends PluginRunner {
+    constructor() {
+        super();
+        console.log(this.plugins);
     }
-    return pluginObjects;
-}
 
-async function getPlugins() {
-    return (await fetch('/api/plugins')).json();
-}
+    enablePlugin(id) {
+        this.plugins.push(id);
+        console.log(this.plugins)
+        localStorage.setItem('plugins', JSON.stringify(this.plugins));
+        super.loadPlugin(id);
+    }
 
-async function getPlugin(id) {
-    return (await fetch(`/api/plugins?id=${id}`, {
-        headers: {
-            'X-Plugin-Type': 'code'
+    disablePlugin(id) {
+        this.plugins = this.plugins.filter(plugin => plugin !== id);
+        console.log(this.plugins)
+        localStorage.setItem('plugins', JSON.stringify(this.plugins));
+        super.unloadPlugin(id);
+    }
+
+    async getPluginObjects() {
+        const pluginsList = await this.getPlugins();
+        const pluginObjects = [];
+        for (const plugin of pluginsList) {
+            const pluginInfo = await super.getPluginInfo(plugin);
+            pluginObjects.push({
+                ...pluginInfo,
+                enabled: this.plugins.includes(plugin),
+                id: plugin,
+            });
         }
-    })).json();
-}
+        return pluginObjects;
+    }
 
-async function getPluginInfo(id) {
-    return (await fetch(`/api/plugins?id=${id}`, {
-        headers: {
-            'X-Plugin-Type': 'info'
-        }
-    })).json();
+    async getPlugins() {
+        return (await fetch('/api/plugins')).json();
+    }
 }
-
-export { getPluginObjects, getPlugins, getPlugin, getPluginInfo, enablePlugin, disablePlugin }

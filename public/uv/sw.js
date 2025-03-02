@@ -2,39 +2,69 @@ importScripts('uv.bundle.js');
 importScripts('uv.config.js');
 importScripts(__uv$config.sw || 'uv.sw.js');
 self.decode = __uv$config.decodeUrl;
+const uv = new UVServiceWorker();
+
 let plugins = [];
+let userAgent;
 
 function loadPlugin(plugin) {
-    const { userCode, ...info } = plugin;
+    if(plugins.find(p => p.id === plugin.id)) return;
+    plugins.push(plugin);
+    const { code, ...info } = plugin;
+    console.log(plugin);
+    console.log({
+        host: info.hosts,
+        injectTo: info.when || 'head',
+        html: code,
+        id: info.id
+    });
     if(info.type === 'tag') {
-        const finalCode = `<script>(${userCode})()</script>`;
-        __uv$config.inject = {
+        uv.config.inject.push({
             host: info.hosts,
             injectTo: info.when || 'head',
-            html: finalCode
-        };
+            html: `<script>${code}</script>`,
+            id: info.id
+        });
     } else if(info.type === 'eval') {
-        
+        uv.config.inject.push({
+            host: info.hosts,
+            injectTo: 'head',
+            html: `<script>eval(${userCode})</script>`,
+            id: info.id
+        });
+    } else {
+        console.warn(`Unknown plugin type for ${info.id}: ${info.type}`);
     }
 }
 
+function removePlugin(id) {
+    console.log(id);
+    plugins = plugins.filter(p => p.id !== id);
+    uv.config.inject = uv.config.inject.filter(p =>  p.id !== id);
+}
+
 self.addEventListener('message', (e) => {
-    const { reason, data } = e;
+    console.log(e);
+    if(location.origin != e.origin) return;
+    const { reason, data } = e.data;
     switch(reason) {
         case 'add-plugin':
-            plugins.push(data);
             loadPlugin(data);
             break;
         case 'remove-plugin':
-            plugins = plugins.filter(p => p.id !== data.id);
+            removePlugin(data);
             break;
+        case 'user-agent':
+            userAgent = data;
         default:
-            console.warn(`Received unknown message reason: ${data}`);
+            console.warn(`Received unknown message reason: ${reason}`);
             break;
     }
 })
 
-const uv = new UVServiceWorker();
+uv.on("request", async (event) => {
+    event.data.headers["user-agent"] = userAgent ?? event.data.headers["user-agent"];
+  });
 
 async function handleRequest(event) {
     if (!uv.route(event)) {

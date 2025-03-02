@@ -7,6 +7,6 @@ export default {
         'description': 'This is a random plugin.',
         'type': 'tag',
         'when': 'head',
-        'hosts': /example.com/
+        'hosts': '/example.com/'
     }
 }

@@ -58,51 +58,19 @@
         backgroundColor: "transparent"
       });
     </script>
-
+    <script src="/js/register-sw.js"></script>
     <script>
       async function setupBaremux() {
+        await registerSW();
         const conn = new BareMux.BareMuxConnection("/baremux/worker.js");
-        await conn.setTransport("/epoxy/index.mjs", [
-          { wisp: `wss://${location.host}/wisp/` },
+        await conn.setTransport(localStorage.getItem("transport") || "/epoxy/index.mjs", [
+          { wisp: localStorage.getItem("server") || `wss://${location.host}/wisp/` },
         ]);
       }
 
       setupBaremux();
 
-       function checkPopups() {
-        var newWin = window.open("", "", "width=100, height=100");
-        if (newWin) {
-          newWin.close();
-          return true;
-        } else {
-          alert("Please allow popups and redirects. Join the discord discord.gg/acceleration");
-          return false;
-        }
-      }
-      window.addEventListener("load", function () {
-        var currentUrl = window.location.href;
-        var bgUrl = localStorage.getItem("backgroundImage");
-        if (
-          currentUrl !== "about:blank" &&
-          !sessionStorage.getItem("tabOpened")
-        ) {
-          if (checkPopups()) {
-            sessionStorage.setItem("tabOpened", "true");
-            var win = window.open("about:blank", "_blank");
-            win.document.write(
-              "<html style='height:100%; margin:0; padding:0;'><body style='height:100%; margin:0; padding:0;'><iframe src='" +
-                currentUrl +
-                "' style='width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe></body></html>"
-            );
-            win.onbeforeunload = function () {
-              sessionStorage.removeItem("tabOpened");
-            };
-            window.close();
-          } else if (!sessionStorage.getItem("alertShown")) {
-            sessionStorage.setItem("alertShown", "true");
-          }
-        }
-      });
+       
     </script>
 
     <li class="nav-item">
@@ -149,13 +117,14 @@
 
     <link href="/css/index.css" rel="stylesheet" />
     <iframe id="frame" src="/home.html"></iframe>
+    <script src="/js/global.js"></script>
     <script>
-      if (localStorage.getItem("closeProt")) {
-        window.onbeforeunload = function (e) {
-          e.preventDefault();
-          return true;
-        };
-      }
+      if(localStorage.getItem("closeProt")) window.closer = true;
+      else window.closer = false;
+
+      if(localStorage.getItem("blanker")) window.blank = true;
+      else window.blank = false;
+
       const cloak = JSON.parse(localStorage.getItem("cloak")) ?? {
         title: "Acceleration",
         icon: "",

@@ -11,16 +11,17 @@ const pluginList = (() => {
     }
   })();  
 
-async function getPlugin(id) {
+async function getPluginCode(id) {
     const extension = await import(path.resolve(`./plugins/${id}.js`));
     return extension.default.code;
 }
 
 async function getPluginInfo(id) {
     const extension = await import(path.resolve(`./plugins/${id}.js`));
-    return extension.default.info;
+    console.log(extension.default.info);
+    return {...extension.default.info, id};
 }
 
 
 
-export { pluginList, getPlugin, getPluginInfo }
+export { pluginList, getPluginCode, getPluginInfo }
