@@ -64,9 +64,7 @@
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri=https://raw.githubusercontent.com/xdevnightless/Acceleration/main/azuredeploy.json">
   <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/azure.svg" alt="Deploy to Azure">
 </a>
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/xdevnightless/Acceleration">
-  <img src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg" alt="Deploy to Netlify">
-</a>
+
 
 
 
